@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: shop-ingress
+  namespace: service-ingress-demo
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: shop.local
+    http:
+      paths:
+      - path: /products
+        pathType: Prefix
+        backend:
+          service:
+            name: products-service
+            port:
+              number: 8080
+      - path: /orders
+        pathType: Prefix
+        backend:
+          service:
+            name: orders-service
+            port:
+              number: 8080

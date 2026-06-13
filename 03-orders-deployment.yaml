@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders-app
+  namespace: service-ingress-demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: orders-app
+  template:
+    metadata:
+      labels:
+        app: orders-app
+    spec:
+      containers:
+      - name: orders-app
+        image: hashicorp/http-echo:0.2.3
+        args:
+        - "-text=Welcome to the Orders Service"
+        - "-listen=:8080"
+        ports:
+        - containerPort: 8080

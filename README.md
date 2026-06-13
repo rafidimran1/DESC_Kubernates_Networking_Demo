@@ -1,5 +1,3 @@
-# DESC_Kubernates_Networking_Demo
-
 # DESC_Kubernates_Service_and_Ingress_Demo
 
 This repository contains a beginner-friendly Kubernetes/K3s demo for understanding **Services** and **Ingress** using a simple online shop scenario.
